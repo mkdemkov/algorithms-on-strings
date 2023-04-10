@@ -1,6 +1,6 @@
 #include <iostream>
+#include "text_generating/text-generating.cpp"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+   std::cout << generateText();
 }
