@@ -1,0 +1,4 @@
+enum typeOfText {
+    BINARY,
+    DNKTEXT
+};
