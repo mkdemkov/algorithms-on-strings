@@ -6,7 +6,10 @@ set(CMAKE_CXX_STANDARD 17)
 add_library(text_generating STATIC
         text_generating/text-generating.cpp)
 
+add_library(algorithms STATIC
+        algorithms/naive-algorithm.cpp algorithms/kmp-default.cpp)
+
 add_library(static STATIC
-        static/enum.cpp)
+        static/enum.cpp static/file-writer.cpp)
 
 add_executable(KDZ2 main.cpp)

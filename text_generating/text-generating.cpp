@@ -30,3 +30,7 @@ std::string generateText(typeOfText type, size_t length) {
     }
     return text;
 }
+
+std::string generateTemplate(const std::string& text, int index, int size) {
+    return text.substr(index, size);
+}
