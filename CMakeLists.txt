@@ -7,9 +7,9 @@ add_library(text_generating STATIC
         text_generating/text-generating.cpp)
 
 add_library(algorithms STATIC
-        algorithms/naive-algorithm.cpp algorithms/kmp-default.cpp)
+        algorithms/naive-algorithm.cpp algorithms/kmp-default.cpp algorithms/kmp-optimized.cpp)
 
 add_library(static STATIC
-        static/enum.cpp static/file-writer.cpp)
+        static/enum.cpp)
 
 add_executable(KDZ2 main.cpp)
