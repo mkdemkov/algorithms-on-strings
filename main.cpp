@@ -23,7 +23,7 @@ int main() {
             total_time += naive_algorithm(binary_text_one, template_from_text);
         }
         int64_t avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_one.size() << ";наивный;" << i << ";" << avg_time
+        table << "бинарный;" << 10000 << ";наивный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -31,7 +31,7 @@ int main() {
             total_time += KMPdefault(binary_text_one, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_one.size() << ";КМП-обычный;" << i << ";" << avg_time
+        table << "бинарный;" << 10000 << ";КМП-обычный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -39,7 +39,7 @@ int main() {
             total_time += KMPoptimized(binary_text_one, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_one.size() << ";КМП-оптимизированный;" << i << ";"
+        table << "бинарный;" << 10000 << ";КМП-оптимизированный;" << i << ";"
               << avg_time << "\n";
 
         template_from_text = generateTemplate(binary_text_two, std::rand() % 100000, i);
@@ -48,7 +48,7 @@ int main() {
             total_time += naive_algorithm(binary_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_two.size() << ";наивный;" << i << ";" << avg_time
+        table << "бинарный;" << 100000 << ";наивный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -56,7 +56,7 @@ int main() {
             total_time += KMPdefault(binary_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_two.size() << ";КМП-обычный;" << i << ";" << avg_time
+        table << "бинарный;" << 100000 << ";КМП-обычный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -64,12 +64,13 @@ int main() {
             total_time += KMPoptimized(binary_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "бинарный;" << binary_text_two.size() << ";КМП-оптимизированный;" << i << ";"
+        table << "бинарный;" << 100000 << ";КМП-оптимизированный;" << i << ";"
               << avg_time << "\n";
     }
 
     std::string dnk_text_one = generateText(DNKTEXT, 10000);
     std::string dnk_text_two = generateText(DNKTEXT, 100000);
+
 
     for (int i = 100; i <= 3000; i += 100) {
         std::string template_from_text = generateTemplate(dnk_text_one, std::rand() % 10000, i);
@@ -81,7 +82,7 @@ int main() {
             total_time += naive_algorithm(dnk_text_one, template_from_text);
         }
         int64_t avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_one.size() << ";наивный;" << i << ";" << avg_time
+        table << "четырехсимвольный;" << 10000 << ";наивный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -89,7 +90,7 @@ int main() {
             total_time += KMPdefault(dnk_text_one, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_one.size() << ";КМП-обычный;" << i << ";" << avg_time
+        table << "четырехсимвольный;" << 10000 << ";КМП-обычный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -97,7 +98,7 @@ int main() {
             total_time += KMPoptimized(dnk_text_one, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_one.size() << ";КМП-оптимизированный;" << i << ";"
+        table << "четырехсимвольный;" << 10000 << ";КМП-оптимизированный;" << i << ";"
               << avg_time << "\n";
 
         template_from_text = generateTemplate(dnk_text_two, std::rand() % 100000, i);
@@ -106,7 +107,7 @@ int main() {
             total_time += naive_algorithm(dnk_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_two.size() << ";наивный;" << i << ";" << avg_time
+        table << "четырехсимвольный;" << 100000 << ";наивный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -114,7 +115,7 @@ int main() {
             total_time += KMPdefault(dnk_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_two.size() << ";КМП-обычный;" << i << ";" << avg_time
+        table << "четырехсимвольный;" << 100000 << ";КМП-обычный;" << i << ";" << avg_time
               << "\n";
 
         total_time = 0;
@@ -122,9 +123,7 @@ int main() {
             total_time += KMPoptimized(dnk_text_two, template_from_text);
         }
         avg_time = total_time / 3;
-        table << "четырехсимвольный;" << dnk_text_two.size() << ";КМП-оптимизированный;" << i << ";"
+        table << "четырехсимвольный;" << 100000 << ";КМП-оптимизированный;" << i << ";"
               << avg_time << "\n";
     }
-
-    std::cout << binary_text_one.size() << "\n" << binary_text_two.size();
 }
